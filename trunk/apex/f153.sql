@@ -27,7 +27,7 @@ prompt APPLICATION 153 - SQLMAP DEMO
 -- Application Export:
 --   Application:     153
 --   Name:            SQLMAP DEMO
---   Date and Time:   23:23 Sunday May 6, 2018
+--   Date and Time:   01:56 Tuesday May 8, 2018
 --   Exported By:     HAYDEN
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -49,7 +49,7 @@ prompt APPLICATION 153 - SQLMAP DEMO
 --       Breadcrumbs:            1
 --         Entries:              1
 --     Security:
---       Authentication:         1
+--       Authentication:         2
 --     User Interface:
 --       Themes:                 1
 --       Templates:
@@ -111,7 +111,7 @@ wwv_flow_api.create_flow(
 ,p_csv_encoding=>'Y'
 ,p_auto_time_zone=>'N'
 ,p_last_updated_by=>'HAYDEN'
-,p_last_upd_yyyymmddhh24miss=>'20180506212157'
+,p_last_upd_yyyymmddhh24miss=>'20180508010240'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_ui_type_name => null
 );
@@ -10898,6 +10898,13 @@ end;
 prompt --application/shared_components/security/authentications
 begin
 wwv_flow_api.create_authentication(
+ p_id=>wwv_flow_api.id(5102240526751363)
+,p_name=>'NoAuth'
+,p_scheme_type=>'NATIVE_DAD'
+,p_use_secure_cookie_yn=>'N'
+,p_ras_mode=>0
+);
+wwv_flow_api.create_authentication(
  p_id=>wwv_flow_api.id(77896447564651881)
 ,p_name=>'APEX'
 ,p_scheme_type=>'NATIVE_APEX_ACCOUNTS'
@@ -11307,13 +11314,13 @@ wwv_flow_api.create_page(
 ,p_first_item=>'NO_FIRST_ITEM'
 ,p_autocomplete_on_off=>'ON'
 ,p_page_template_options=>'#DEFAULT#'
-,p_dialog_chained=>'Y'
 ,p_overwrite_navigation_list=>'N'
-,p_page_is_public_y_n=>'N'
+,p_page_is_public_y_n=>'Y'
+,p_rejoin_existing_sessions=>'Y'
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'HAYDEN'
-,p_last_upd_yyyymmddhh24miss=>'20171211084936'
+,p_last_upd_yyyymmddhh24miss=>'20180508005721'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(81003229809306901)
